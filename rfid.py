@@ -9,10 +9,12 @@ def hello():
     callback = test.rf_Read
     print("aa " + str(threading.activeCount()))
     print("[%s] helohelo!!" % threading.currentThread().getName())
-    if handler(callback) != 0:
+    data = handler(callback)
+    if data != 0:
         t=threading.Timer(3,hello)
-    else
+    else:
         t=threading.Timer(0.01,hello)
+    print("%X" % data)
     t.start()
 
 if __name__=='__main__':

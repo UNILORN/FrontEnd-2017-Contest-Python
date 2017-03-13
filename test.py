@@ -23,10 +23,10 @@ def rf_Read():
     libpafe.felica_get_idm(felica, byref(idm))
 
     # IDmは16進表記
-    print("%X" % idm.value)
+    # print("%X" % idm.value)
 
     # READMEより、felica_polling()使用後はfree()を使う
     # なお、freeは自動的にライブラリに入っているもよう
     libpafe.free(felica)
-
     libpafe.pasori_close(pasori)
+    return idm.value
